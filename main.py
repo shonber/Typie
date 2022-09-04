@@ -169,6 +169,8 @@ _____________________________________________
     else:
         handler(1, 31, "", "", "\n[-] No such option!")
         handler(1, 31, "", "reset", "")
+        time.sleep(1)
+        os.system('cls||clear')
 
 
 if __name__ == "__main__":
