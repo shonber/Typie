@@ -52,7 +52,11 @@ def save_stats(stats):
             lines = ReadFile.read()
 
         loaded_stats = json.loads(lines)
-        loaded_stats[len(loaded_stats) + 1] = "test"
+        if len(loaded_stats) == 1:
+            loaded_stats[len(loaded_stats)] = stats
+        else:
+            loaded_stats[len(loaded_stats) + 1] = stats
+
         load = json.dumps(loaded_stats, indent=2, ensure_ascii=False)
 
         with open("./stats.json", "w", encoding='utf-8') as WriteFile:
